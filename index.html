@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zuhrul Umam — Portfolio (Web Developer & IT Support)</title>
+  <meta name="description" content="Portfolio Moch. Zuhrul Umam — Web Developer & IT Support. Project: LPM UNISLA, SIAMU, Presensi, Padi Classifier, Overload Detector." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    /* =====================================
+       GLOBAL VARIABEL
+    ===================================== */
+    :root{
+      --bg:#0f172a;
+      --card:#0f2438;
+      --accent:#3b82f6;
+      --muted:#9db4ce;
+      --text:#eef6ff;
+      --radius:12px;
+      --maxw:980px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+      background:linear-gradient(180deg,#071027 0%, #071830 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    a.link{color:var(--accent);text-decoration:none}
+
+    html{scroll-behavior:smooth}
+
+    /* =====================================
+       HEADER
+    ===================================== */
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;margin-bottom:22px;
+      position:sticky;top:0;background:var(--bg);
+      padding:10px 0;z-index:10
+    }
+
+    .brand{display:flex;align-items:center;gap:14px}
+
+    .logo{
+      width:64px;height:64px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#60a5fa);
+      display:grid;place-items:center;
+      font-weight:700;color:#072033
+    }
+
+    h1{font-size:22px}
+    .role{color:var(--muted);font-size:14px}
+
+    nav{display:flex;gap:10px}
+    nav a{
+      color:var(--muted);text-decoration:none;
+      font-size:14px;padding:8px 12px;border-radius:8px;
+      transition:.2s
+    }
+    nav a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
+
+    /* =====================================
+       BUTTON
+    ===================================== */
+    .btn{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);padding:8px 12px;border-radius:10px;
+      cursor:pointer;transition:.25s
+    }
+    .btn.primary{background:var(--accent);color:#072033;border:none}
+    .btn:hover{opacity:.85}
+
+    /* =====================================
+       HERO SECTION
+    ===================================== */
+    .hero{
+      background:rgba(255,255,255,0.02);
+      padding:22px;border-radius:14px;
+      display:flex;gap:22px;align-items:center;
+      border:1px solid rgba(255,255,255,0.03);
+      margin-bottom:20px
+    }
+    .hero-left{flex:1}
+    .hero h2{font-size:20px;margin-bottom:10px}
+    .hero p{color:var(--muted);margin-bottom:12px;line-height:1.5}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* =====================================
+       PROJECT CARD + ANIMASI
+    ===================================== */
+    .card{
+      background:var(--card);
+      padding:16px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.03)
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;margin-top:14px
+    }
+
+    .project{
+      display:flex;flex-direction:column;gap:10px;
+      background:var(--card);
+      padding:16px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.04);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .project:hover{
+      transform: translateY(-10px) scale(1.04);
+      box-shadow:0 18px 40px rgba(0,0,0,0.55);
+    }
+
+    .project .thumb{
+      width:100%;height:160px;border-radius:10px;
+      object-fit:cover;background:#071827;
+      display:grid;place-items:center;color:var(--muted)
+    }
+    .project h3{font-size:17px;margin:0}
+    .project p{color:var(--muted);font-size:14px;line-height:1.45}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .tag{
+      background:rgba(255,255,255,0.02);
+      padding:7px 10px;border-radius:999px;
+      font-size:13px;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02)
+    }
+
+    /* =====================================
+       SIDEBAR & FOOTER
+    ===================================== */
+    aside{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+    .meta{color:var(--muted);font-size:14px}
+
+    footer{
+      margin-top:26px;color:var(--muted);
+      font-size:13px;text-align:center
+    }
+
+    /* =====================================
+       MOBILE OPTIMIZATION
+    ===================================== */
+    @media(max-width:600px){
+
+      body{padding:16px}
+      header{flex-direction:column;align-items:flex-start}
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-left{
+        text-align:center;
+      }
+      .hero-left h2{text-align:center;font-size:18px}
+      .hero-left p{text-align:center;font-size:14px}
+
+      .cta{
+        flex-direction:column;
+      }
+      .cta .btn{
+        width:100%;
+      }
+
+      .card img{
+        width:120px;height:120px
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap" role="main">
+
+  <!-- =====================================
+       HEADER
+  ===================================== -->
+  <header>
+    <div class="brand">
+      <div class="logo">ZU</div>
+      <div>
+        <h1>Moch. Zuhrul Umam</h1>
+        <div class="role">Web Developer • IT Support</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#projects">Project</a>
+      <a href="#contact-title">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- =====================================
+       HERO SECTION
+  ===================================== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-left">
+      <h2 id="hero-title">Halo — Saya Moch Zuhrul Umam.</h2>
+
+      <p>
+        Lulusan S1 Informatika Universitas Islam Lamongan dengan ketertarikan pada pengembangan aplikasi web dan dukungan teknis IT. 
+        Berpengalaman mengelola website institusi berbasis WordPress, membuat sistem audit mutu internal berbasis PHP, serta membangun 
+        antarmuka sederhana untuk model machine learning menggunakan Flask. Terbiasa menangani kebutuhan teknis, bekerja kolaboratif, 
+        dan berfokus pada solusi yang efisien serta mudah digunakan.
+      </p>
+
+      <div class="cta">
+        <button class="btn primary" onclick="downloadCV()">Unduh CV</button>
+        <button class="btn" onclick="contactMail()">Email: zuhrulumam969@gmail.com</button>
+      </div>
+    </div>
+
+    <div style="width:240px">
+      <div class="card" style="text-align:center">
+        <img src="img/pp.jpg" alt="Foto Profil" style="width:140px;height:140px;border-radius:50%;margin-bottom:12px;object-fit:cover">
+        <div class="meta">Lamongan, Indonesia</div>
+        <div class="meta" style="margin-top:8px">
+          Email: <a class="link" href="mailto:zuhrulumam969@gmail.com">zuhrulumam969@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================
+       PROJECTS
+  ===================================== -->
+  <main id="projects" aria-labelledby="projects-title">
+    <div class="card">
+      <h3 id="projects-title" style="margin-top:0">Project</h3>
+
+      <div class="grid">
+
+        <!-- Project 1 -->
+        <article class="project">
+          <div class="thumb">
+            <img src="img/lpmweb.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
+          </div>
+          <h3>Website LPM UNISLA (WordPress)</h3>
+          <p>Mengelola website resmi LPM Universitas Islam Lamongan: instalasi, konfigurasi tema & plugin, optimasi tampilan, dan publikasi konten.</p>
+          <div class="tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">Theme Configuration</span>
+            <span class="tag">Content Management</span>
+            <a class="tag link" href="https://lpm.unisla.ac.id" target="_blank">Kunjungi</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project">
+          <div class="thumb">
+            <img src="img/siamu.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
+          </div>
+          <h3>SIAMU UNISLA — Sistem Audit Mutu Internal (PHP)</h3>
+          <p>Sistem audit mutu berbasis PHP dengan fitur autentikasi, manajemen dokumen, verifikasi, dan laporan internal.</p>
+          <div class="tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MVC</span>
+            <span class="tag">Dokumen & Laporan</span>
+            <a class="tag link" href="https://siamu.unisla.ac.id" target="_blank">Kunjungi</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project">
+          <div class="thumb">
+            <img src="img/simts.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
+          </div>
+          <h3>SIMTS - Sistem Informasi MTs</h3>
+          <p>Desain front-end sistem presensi guru & siswa: login, input hadir, rekap CSV.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">UI/UX</span>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project">
+          <div class="thumb">
+            <img src="img/sipadi.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
+          </div>
+          <h3>Aplikasi Klasifikasi Penyakit Padi (Flask)</h3>
+          <p>Web interface Flask untuk model ResNet50V2: upload citra daun, prediksi penyakit, dan confidence score.</p>
+          <div class="tags">
+            <span class="tag">Flask</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">ResNet50V2</span>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project">
+          <div class="thumb">
+            <img src="img/overload.jpg" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
+          </div>
+          <h3>Landing Page — Deteksi Kelebihan Muatan</h3>
+          <p>Landing page untuk aplikasi deteksi overload, berisi dokumentasi singkat dan contoh hasil.</p>
+          <div class="tags">
+            <span class="tag">Landing Page</span>
+            <span class="tag">Documentation</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- =====================================
+         SIDEBAR
+    ===================================== -->
+    <aside>
+      <div class="card">
+        <h4 style="margin:0 0 8px 0">Keahlian Teknis</h4>
+        <div class="meta">
+          HTML, CSS, JavaScript • PHP & MySQL • WordPress • Flask & TensorFlow • GitHub • Deployment • IT Support & Networking
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="margin:0 0 8px 0">Pendidikan & Sertifikat</h4>
+        <div class="meta">
+          S1 Informatika — Universitas Islam Lamongan (IPK 3.70) • Sertifikat Dicoding: JavaScript, SQL, Web, Software Dev, Project Management (2023)
+        </div>
+      </div>
+
+      <div class="card" id="contact-title">
+        <h4 style="margin:0 0 8px 0">Kontak</h4>
+        <div class="meta">Email: <a class="link" href="mailto:zuhrulumam969@gmail.com">zuhrulumam969@gmail.com</a></div>
+        <div class="meta" style="margin-top:8px">GitHub: <a class="link" href="https://github.com/zuhrulumam" target="_blank">github.com/zuhrulumam</a></div>
+        <div class="meta" style="margin-top:8px">Lokasi: Lamongan, Indonesia</div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 Moch. Zuhrul Umam — Web Developer & IT Support.
+  </footer>
+
+</div>
+
+<script>
+function downloadCV(){
+  window.open('https://github.com/zhrlumam/img/CV_Zuhrul_Umam.pdf','_blank');
+}
+function contactMail(){
+  location.href = 'mailto:zuhrulumam969@gmail.com';
+}
+</script>
+
+</body>
+</html>
