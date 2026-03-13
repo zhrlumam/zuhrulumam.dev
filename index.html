@@ -1,366 +1,836 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zuhrul Umam — Portfolio (Web Developer & IT Support)</title>
-  <meta name="description" content="Portfolio Moch. Zuhrul Umam — Web Developer & IT Support. Project: LPM UNISLA, SIAMU, Presensi, Padi Classifier, Overload Detector." />
-  <meta name="theme-color" content="#0f172a" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portofolio Moch. Zuhrul Umam - Web Developer, AI Enthusiast & Informatics Educator. Lulusan Teknik Informatika UNISLA dengan keahlian Laravel, Python, dan Machine Learning.">
+    <meta name="keywords"
+        content="Web Developer, Laravel, PHP, Python, Flask, Zuhrul Umam, AI, Machine Learning, Deep Learning, CNN, Data Science">
+    <meta name="author" content="Moch. Zuhrul Umam">
+    <meta property="og:title" content="Moch. Zuhrul Umam - Web Developer & AI Enthusiast">
+    <meta property="og:description"
+        content="Sarjana Teknik Informatika yang berfokus pada pengembangan teknologi web, kecerdasan buatan, dan literasi digital.">
+    <meta property="og:type" content="website">
 
-  <style>
-    /* =====================================
-       GLOBAL VARIABEL
-    ===================================== */
-    :root{
-      --bg:#0f172a;
-      --card:#0f2438;
-      --accent:#3b82f6;
-      --muted:#9db4ce;
-      --text:#eef6ff;
-      --radius:12px;
-      --maxw:980px;
-    }
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-      background:linear-gradient(180deg,#071027 0%, #071830 60%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      padding:28px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .wrap{width:100%;max-width:var(--maxw)}
-
-    a.link{color:var(--accent);text-decoration:none}
-
-    html{scroll-behavior:smooth}
-
-    /* =====================================
-       HEADER
-    ===================================== */
-    header{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:16px;margin-bottom:22px;
-      position:sticky;top:0;background:var(--bg);
-      padding:10px 0;z-index:10
-    }
-
-    .brand{display:flex;align-items:center;gap:14px}
-
-    .logo{
-      width:64px;height:64px;border-radius:14px;
-      background:linear-gradient(135deg,var(--accent),#60a5fa);
-      display:grid;place-items:center;
-      font-weight:700;color:#072033
-    }
-
-    h1{font-size:22px}
-    .role{color:var(--muted);font-size:14px}
-
-    nav{display:flex;gap:10px}
-    nav a{
-      color:var(--muted);text-decoration:none;
-      font-size:14px;padding:8px 12px;border-radius:8px;
-      transition:.2s
-    }
-    nav a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
-
-    /* =====================================
-       BUTTON
-    ===================================== */
-    .btn{
-      background:transparent;border:1px solid rgba(255,255,255,0.06);
-      color:var(--muted);padding:8px 12px;border-radius:10px;
-      cursor:pointer;transition:.25s
-    }
-    .btn.primary{background:var(--accent);color:#072033;border:none}
-    .btn:hover{opacity:.85}
-
-    /* =====================================
-       HERO SECTION
-    ===================================== */
-    .hero{
-      background:rgba(255,255,255,0.02);
-      padding:22px;border-radius:14px;
-      display:flex;gap:22px;align-items:center;
-      border:1px solid rgba(255,255,255,0.03);
-      margin-bottom:20px
-    }
-    .hero-left{flex:1}
-    .hero h2{font-size:20px;margin-bottom:10px}
-    .hero p{color:var(--muted);margin-bottom:12px;line-height:1.5}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}
-
-    /* =====================================
-       PROJECT CARD + ANIMASI
-    ===================================== */
-    .card{
-      background:var(--card);
-      padding:16px;border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,0.03)
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:18px;margin-top:14px
-    }
-
-    .project{
-      display:flex;flex-direction:column;gap:10px;
-      background:var(--card);
-      padding:16px;border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,0.04);
-      transition: transform .35s ease, box-shadow .35s ease;
-    }
-
-    .project:hover{
-      transform: translateY(-10px) scale(1.04);
-      box-shadow:0 18px 40px rgba(0,0,0,0.55);
-    }
-
-    .project .thumb{
-      width:100%;height:160px;border-radius:10px;
-      object-fit:cover;background:#071827;
-      display:grid;place-items:center;color:var(--muted)
-    }
-    .project h3{font-size:17px;margin:0}
-    .project p{color:var(--muted);font-size:14px;line-height:1.45}
-
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-    .tag{
-      background:rgba(255,255,255,0.02);
-      padding:7px 10px;border-radius:999px;
-      font-size:13px;color:var(--muted);
-      border:1px solid rgba(255,255,255,0.02)
-    }
-
-    /* =====================================
-       SIDEBAR & FOOTER
-    ===================================== */
-    aside{margin-top:18px;display:flex;flex-direction:column;gap:12px}
-    .meta{color:var(--muted);font-size:14px}
-
-    footer{
-      margin-top:26px;color:var(--muted);
-      font-size:13px;text-align:center
-    }
-
-    /* =====================================
-       MOBILE OPTIMIZATION
-    ===================================== */
-    @media(max-width:600px){
-
-      body{padding:16px}
-      header{flex-direction:column;align-items:flex-start}
-
-      .hero{
-        flex-direction:column;
-        text-align:center;
-      }
-
-      .hero-left{
-        text-align:center;
-      }
-      .hero-left h2{text-align:center;font-size:18px}
-      .hero-left p{text-align:center;font-size:14px}
-
-      .cta{
-        flex-direction:column;
-      }
-      .cta .btn{
-        width:100%;
-      }
-
-      .card img{
-        width:120px;height:120px
-      }
-    }
-  </style>
+    <title>Moch. Zuhrul Umam - Web Developer & AI Enthusiast</title>
 </head>
 
 <body>
-<div class="wrap" role="main">
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Zuhrul Umam</a>
 
-  <!-- =====================================
-       HEADER
-  ===================================== -->
-  <header>
-    <div class="brand">
-      <div class="logo">ZU</div>
-      <div>
-        <h1>Moch. Zuhrul Umam</h1>
-        <div class="role">Web Developer • IT Support</div>
-      </div>
-    </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link" id="nav-home">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link" id="nav-about">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link" id="nav-skills">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#qualification" class="nav__link" id="nav-journey">
+                            <i class="uil uil-graduation-cap nav__icon"></i> Journey
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link" id="nav-portfolio">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link" id="nav-contact">
+                            <i class="uil uil-message nav__icon"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
 
-    <nav>
-      <a href="#projects">Project</a>
-      <a href="#contact-title">Kontak</a>
-    </nav>
-  </header>
+            <div class="nav__btns">
+                <i class="uil uil-language change-language" id="language-button" title="Play Translation"></i>
+                <i class="uil uil-moon change-theme" id="theme-button" title="Toggle Theme"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- =====================================
-       HERO SECTION
-  ===================================== -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-left">
-      <h2 id="hero-title">Halo — Saya Moch Zuhrul Umam.</h2>
+    <main class="main">
+        <!-- ==================== HOME ==================== -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/mochzuhrulumam/" target="_blank"
+                            class="home__social-icon" title="LinkedIn" id="social-linkedin">
+                            <i class="uil uil-linkedin-alt"></i>
+                        </a>
+                        <a href="https://github.com/zhrlumam" target="_blank" class="home__social-icon"
+                            title="GitHub" id="social-github">
+                            <i class="uil uil-github-alt"></i>
+                        </a>
+                        <a href="https://www.instagram.com/zuhrulumam" target="_blank"
+                            class="home__social-icon" title="Instagram" id="social-instagram">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
 
-      <p>
-        Lulusan S1 Informatika Universitas Islam Lamongan dengan ketertarikan pada pengembangan aplikasi web dan dukungan teknis IT. 
-        Berpengalaman mengelola website institusi berbasis WordPress, membuat sistem audit mutu internal berbasis PHP, serta membangun 
-        antarmuka sederhana untuk model machine learning menggunakan Flask. Terbiasa menangani kebutuhan teknis, bekerja kolaboratif, 
-        dan berfokus pada solusi yang efisien serta mudah digunakan.
-      </p>
+                    <div class="home__img">
+                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                <image class="home__blob-img" x='12' y='18' xlink:href="assets/img/perfil.png" />
+                            </g>
+                        </svg>
+                    </div>
 
-      <div class="cta">
-        <button class="btn primary" onclick="downloadCV()">Unduh CV</button>
-        <button class="btn" onclick="contactMail()">Email: zuhrulumam969@gmail.com</button>
-      </div>
-    </div>
+                    <div class="home__data">
+                        <span class="home__greeting" data-translate="home_greeting">Halo, Saya</span>
+                        <h1 class="home__title"><span data-translate="home_title">Moch. Zuhrul Umam</span></h1>
+                        <h3 class="home__subtitle" data-translate="home_subtitle">Web Developer | AI Enthusiast | Informatics Educator</h3>
+                        <p class="home__description" data-translate="home_description">
+                            Sarjana Teknik Informatika yang berfokus pada pengembangan teknologi web, kecerdasan buatan, dan literasi digital.
+                        </p>
+                        <div class="home__btns">
+                            <a href="#contact" class="button button--flex" id="home-cta">
+                                <span data-translate="contact_me">Hubungi Saya</span>
+                                <i class="uil uil-message button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    <div style="width:240px">
-      <div class="card" style="text-align:center">
-        <img src="img/pp.jpg" alt="Foto Profil" style="width:140px;height:140px;border-radius:50%;margin-bottom:12px;object-fit:cover">
-        <div class="meta">Lamongan, Indonesia</div>
-        <div class="meta" style="margin-top:8px">
-          Email: <a class="link" href="mailto:zuhrulumam969@gmail.com">zuhrulumam969@gmail.com</a>
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Scroll down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT ==================== -->
+        <section class="about section" id="about">
+            <h2 class="section__title" data-translate="about_title">Tentang Saya</h2>
+            <span class="section__subtitle" data-translate="about_subtitle">Profil &amp; Latar Belakang</span>
+
+            <div class="about__container container grid">
+                <img src="assets/img/about.jpg" alt="Foto Moch. Zuhrul Umam" class="about__img">
+
+                <div class="about__data">
+                    <p class="about__description" data-translate="about_description">
+                        Lulusan S1 Teknik Informatika Universitas Islam Lamongan dengan <strong>IPK 3.70/4.00</strong>.
+                        Memiliki pengalaman lebih dari dua tahun mengajar Informatika serta aktif dalam pengembangan
+                        sistem informasi di lingkungan instansi pemerintahan dan universitas. Saya adalah pribadi yang
+                        teliti, adaptif, dan berorientasi pada hasil dalam setiap proyek teknologi.
+                        <br><br>
+                        <strong data-translate="special_interest">Minat Khusus:</strong>
+                        Sangat tertarik pada pengembangan Deep Learning, Cloud Computing, dan Data Science.
+                    </p>
+
+                    <div class="about__info">
+                        <div class="about__info-box">
+                            <span class="about__info-title">02+</span>
+                            <span class="about__info-name" data-translate="years_exp">Tahun <br> Pengalaman</span>
+                        </div>
+                        <div class="about__info-box">
+                            <span class="about__info-title">10+</span>
+                            <span class="about__info-name" data-translate="completed_projects">Proyek <br> Selesai</span>
+                        </div>
+                        <div class="about__info-box">
+                            <span class="about__info-title">05+</span>
+                            <span class="about__info-name" data-translate="tech_certs">Sertifikasi <br> Teknologi</span>
+                        </div>
+                    </div>
+
+                    <div class="about__buttons">
+                        <a download href="assets/pdf/CV_Zuhrul_Umam.pdf" class="button button--flex" id="about-cv-btn">
+                            <span data-translate="download_cv">Unduh CV</span>
+                            <i class="uil uil-download-alt button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section class="skills section" id="skills">
+            <h2 class="section__title" data-translate="skills_title">Keahlian</h2>
+            <span class="section__subtitle" data-translate="skills_subtitle">Kemampuan Teknis Saya</span>
+
+            <div class="skills__container container grid">
+                <!-- Left column -->
+                <div>
+                    <!-- Programming -->
+                    <div class="skills__content skills__open">
+                        <div class="skills__header">
+                            <i class="uil uil-brackets-curly skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Programming</h1>
+                                <span class="skills__subtitle" data-translate="programming_subtitle">Web &amp; Logic</span>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">PHP (Laravel)</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__php" style="width: 90%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Python (Flask)</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__python" style="width: 85%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">JavaScript, HTML, CSS</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html" style="width: 85%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech & AI -->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-processor skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Tech &amp; AI</h1>
+                                <span class="skills__subtitle" data-translate="ai_subtitle">Machine Learning &amp; Data</span>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Machine Learning &amp; Deep Learning (CNN)</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 80%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Cloud Computing (AWS)</h3>
+                                    <span class="skills__number">75%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 75%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Data Science</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 80%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column -->
+                <div>
+                    <!-- Tools & Design -->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-swatchbook skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Tools &amp; Design</h1>
+                                <span class="skills__subtitle" data-translate="design_subtitle">Design &amp; Office</span>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">MS Office, Figma, Canva</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 90%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">WordPress</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 85%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-users-alt skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title" data-translate="soft_skills">Soft Skills</h1>
+                                <span class="skills__subtitle" data-translate="soft_skills_subtitle">Collaboration &amp; Communication</span>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name" data-translate="comm_skill">Komunikasi Efektif</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 90%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Mentoring &amp; Analisis Data</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 85%"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name" data-translate="problem_solving">Problem Solving</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage" style="width: 90%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== JOURNEY / QUALIFICATION ==================== -->
+        <section class="qualification section" id="qualification">
+            <h2 class="section__title" data-translate="journey_title">Perjalanan</h2>
+            <span class="section__subtitle" data-translate="journey_subtitle">Pengalaman &amp; Pendidikan</span>
+
+            <div class="qualification__container container">
+                <div class="qualification__tabs">
+                    <div class="qualification__button button--flex qualification__active" data-target='#education'>
+                        <i class="uil uil-graduation-cap qualification__icon"></i>
+                        <span data-translate="education">Pendidikan</span>
+                    </div>
+                    <div class="qualification__button button--flex" data-target="#work">
+                        <i class="uil uil-briefcase-alt qualification__icon"></i>
+                        <span data-translate="experience">Pengalaman</span>
+                    </div>
+                </div>
+
+                <div class="qualification__sections">
+                    <!-- EDUCATION -->
+                    <div class="qualification__content qualification__active" data-content id="education">
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">S1 Teknik Informatika</h3>
+                                <span class="qualification__subtitle">Universitas Islam Lamongan</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i> 2021 – 2025
+                                </div>
+                                <span class="qualification__description">IPK: <strong>3.70/4.00</strong></span>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title" data-translate="tech_cert_title">Sertifikasi Teknologi</h3>
+                                <span class="qualification__subtitle">Dicoding Indonesia</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-award"></i> Python, AI, Machine Learning, AWS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXPERIENCE -->
+                    <div class="qualification__content" data-content id="work">
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Web Developer</h3>
+                                <span class="qualification__subtitle">Lapas Kelas II B Lamongan</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i> 2024 – Sekarang
+                                </div>
+                                <p class="qualification__description">Membangun & mengelola SIPPASLA serta IT Support</p>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title">Web Developer</h3>
+                                <span class="qualification__subtitle">Lembaga Penjaminan Mutu (LPM)</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i> 2024
+                                </div>
+                                <p class="qualification__description" data-translate="lpm_desc">Efisiensi Audit Mutu Internal Digital</p>
+                            </div>
+                        </div>
+
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">UI Designer</h3>
+                                <span class="qualification__subtitle">Webifyaja.tech</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i> 2024
+                                </div>
+                                <p class="qualification__description">Wireframe & Prototipe antarmuka web intuitif</p>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title" data-translate="teacher_admin">Guru &amp; Admin</h3>
+                                <span class="qualification__subtitle">MTs Hidayatul Muta'allimin</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i> 2022 – 2023
+                                </div>
+                                <p class="qualification__description">Mengajar Informatika & kelola administrasi sekolah</p>
+                            </div>
+                        </div>
+
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title" data-translate="speaker">Pemateri</h3>
+                                <span class="qualification__subtitle">Universitas Islam Lamongan</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i> 2023
+                                </div>
+                                <p class="qualification__description" data-translate="speaker_desc">Seminar Coding &amp; Blog</p>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PORTFOLIO ==================== -->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title" data-translate="portfolio_title">Portofolio</h2>
+            <span class="section__subtitle" data-translate="portfolio_subtitle">Proyek &amp; Prestasi</span>
+
+            <div class="portfolio__container container swiper-container">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1: SIPPASLA -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio1.png" alt="SIPPASLA" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">
+                                <i class="uil uil-university portfolio__title-icon"></i> 
+                                <span data-translate="sippasla_title">SIPPASLA</span>
+                            </h3>
+                            <p class="portfolio__description" data-translate="sippasla_desc">
+                                Sistem Informasi Pelayanan Lapas Lamongan. Membangun dan mengelola sistem layanan publik digital termasuk e-Kunjungan, e-Pengaduan, dan Layanan Integrasi.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                <span data-translate="demo">Lihat Demo</span> <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: AI Leaf Detection -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio2.jpg" alt="AI Leaf Detection" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">
+                                <i class="uil uil-leaf portfolio__title-icon"></i> 
+                                <span data-translate="leaf_title">AI Leaf Detection</span>
+                            </h3>
+                            <p class="portfolio__description" data-translate="leaf_desc">
+                                Sistem Deteksi Penyakit Daun Padi menggunakan metode CNN (Convolutional Neural Network). Akurasi tinggi dalam klasifikasi penyakit tanaman padi.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="tag">Python</span><span class="tag">CNN</span><span class="tag">TensorFlow</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                <span data-translate="detail">Lihat Detail</span> <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Vehicle Overload Detection -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio3.jpg" alt="Vehicle Overload" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">
+                                <i class="uil uil-truck portfolio__title-icon"></i> 
+                                <span data-translate="vehicle_title">Vehicle Overload Detection</span>
+                            </h3>
+                            <p class="portfolio__description" data-translate="vehicle_desc">
+                                Aplikasi deteksi muatan berlebih berbasis Flask + CNN untuk optimasi logistik dan keselamatan transportasi.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="tag">Flask</span><span class="tag">CNN</span><span class="tag">OpenCV</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                <span data-translate="demo">Lihat Demo</span> <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Web Audit Internal -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <div class="portfolio__img portfolio__img-placeholder">
+                            <i class="uil uil-clipboard-notes"></i>
+                        </div>
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">
+                                <i class="uil uil-file-check-alt portfolio__title-icon"></i> 
+                                <span data-translate="audit_title">Web Audit Internal</span>
+                            </h3>
+                            <p class="portfolio__description" data-translate="audit_desc">
+                                Sistem informasi audit mutu digital untuk Lembaga Penjaminan Mutu (LPM) UNISLA. Meningkatkan efisiensi audit mutu internal.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Bootstrap</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                <span data-translate="demo">Lihat Demo</span> <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Research -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <div class="portfolio__img portfolio__img-placeholder">
+                            <i class="uil uil-search-alt"></i>
+                        </div>
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">
+                                <i class="uil uil-microscope portfolio__title-icon"></i> 
+                                <span data-translate="research_title">Research: Depression Detection</span>
+                            </h3>
+                            <p class="portfolio__description" data-translate="research_desc">
+                                Kontributor penelitian "Deteksi Depresi pada Siswa Berbasis Web" yang terindeks <strong>Google Scholar</strong>.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="tag">Research</span><span class="tag">Google Scholar</span>
+                            </div>
+                            <a href="https://scholar.google.com" target="_blank" class="button button--flex button--small portfolio__button">
+                                <span data-translate="detail">Lihat Detail</span> <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Award -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <div class="portfolio__img portfolio__img-placeholder award-bg">
+                            <i class="uil uil-trophy"></i>
+                        </div>
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">
+                                <i class="uil uil-award portfolio__title-icon"></i> 
+                                <span data-translate="award_title">Award: MagangHub Best Participant</span>
+                            </h3>
+                            <p class="portfolio__description" data-translate="award_desc">
+                                Peserta MagangHub Batch 3 Terbaik di Lapas Kelas IIB Lamongan — penghargaan atas kontribusi nyata dalam pengembangan sistem digital instansi pemerintah.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="tag">Achievement</span><span class="tag">MagangHub</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- ==================== SERVICES ==================== -->
+        <section class="services section" id="services">
+            <h2 class="section__title" data-translate="services_title">Layanan</h2>
+            <span class="section__subtitle" data-translate="services_subtitle">Yang Saya Tawarkan</span>
+
+            <div class="services__container container grid">
+                <!-- Web Dev -->
+                <div class="services__content">
+                    <div class="services__header-card">
+                        <i class="uil uil-web-grid services__icon"></i>
+                        <h3 class="services__title" data-translate="web_dev_service">Pengembangan Web</h3>
+                    </div>
+                    
+                    <ul class="services__list-content grid">
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="web_s1">Pengembangan sistem berbasis Laravel/PHP.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="web_s2">Pembuatan website profil, portal, dan sistem informasi.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="web_s3">Perancangan UI/UX dengan Figma &amp; Canva.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI & ML -->
+                <div class="services__content">
+                    <div class="services__header-card">
+                        <i class="uil uil-processor services__icon"></i>
+                        <h3 class="services__title" data-translate="ai_service">AI &amp; Machine Learning</h3>
+                    </div>
+
+                    <ul class="services__list-content grid">
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="ai_s1">Implementasi model Deep Learning (CNN).</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="ai_s2">Analisis Data menggunakan Python &amp; Data Science.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="ai_s3">Pengembangan aplikasi berbasis Flask + AI.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Education -->
+                <div class="services__content">
+                    <div class="services__header-card">
+                        <i class="uil uil-graduation-cap services__icon"></i>
+                        <h3 class="services__title" data-translate="edu_service">Pelatihan &amp; Edukasi</h3>
+                    </div>
+
+                    <ul class="services__list-content grid">
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="edu_s1">Mengajar mata pelajaran Informatika.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="edu_s2">Seminar dan workshop coding.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p data-translate="edu_s3">Mentoring pengembangan web &amp; pembuatan blog.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section class="contact section" id="contact">
+            <h2 class="section__title" data-translate="contact_title">Kontak</h2>
+            <span class="section__subtitle" data-translate="contact_subtitle">Hubungi Saya</span>
+
+            <div class="contact__container container grid">
+                <div>
+                    <div class="contact__information">
+                        <i class="uil uil-envelope contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">
+                                <a href="mailto:zuhrulumam969@gmail.com">zuhrulumam969@gmail.com</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact__information">
+                        <i class="uil uil-linkedin contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">LinkedIn</h3>
+                            <span class="contact__subtitle">
+                                <a href="https://linkedin.com/in/mochzuhrulumam" target="_blank">linkedin.com/in/mochzuhrulumam</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact__information">
+                        <i class="uil uil-globe contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Website</h3>
+                            <span class="contact__subtitle">
+                                <a href="https://zuhrulumamdev.vercel.app" target="_blank">zuhrulumamdev.vercel.app</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact__information">
+                        <i class="uil uil-map-marker contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title" data-translate="location">Lokasi</h3>
+                            <span class="contact__subtitle">Lamongan, Jawa Timur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form grid" id="contactForm">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="contact-name" class="contact__label" data-translate="form_name">Nama</label>
+                            <input type="text" id="contact-name" class="contact__input" placeholder="Nama Anda"
+                                required>
+                        </div>
+                        <div class="contact__content">
+                            <label for="contact-email" class="contact__label">Email</label>
+                            <input type="email" id="contact-email" class="contact__input"
+                                placeholder="email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="contact-project" class="contact__label"
+                            data-translate="form_project">Topik / Proyek</label>
+                        <input type="text" id="contact-project" class="contact__input"
+                            placeholder="Web Development, AI, Konsultasi, dll." required>
+                    </div>
+                    <div class="contact__content">
+                        <label for="contact-message" class="contact__label"
+                            data-translate="form_message">Pesan</label>
+                        <textarea id="contact-message" cols="0" rows="7" class="contact__input"
+                            placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="button button--flex" id="contact-submit-btn">
+                            <span data-translate="send_message">Kirim Pesan</span>
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Moch. Zuhrul Umam</h1>
+                    <span class="footer__subtitle" data-translate="home_subtitle">Web Developer | AI Enthusiast | Informatics Educator</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li><a href="#about" class="footer__link" data-translate="about_title">Tentang Saya</a></li>
+                    <li><a href="#skills" class="footer__link" data-translate="skills_title">Keahlian</a></li>
+                    <li><a href="#services" class="footer__link" data-translate="services_title">Layanan</a></li>
+                    <li><a href="#portfolio" class="footer__link" data-translate="portfolio_title">Portofolio</a></li>
+                    <li><a href="#contact" class="footer__link" data-translate="contact_title">Kontak</a></li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/mochzuhrulumam/" target="_blank" class="footer__social"
+                        title="LinkedIn">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                    <a href="https://github.com/zhrlumam" target="_blank" class="footer__social" title="GitHub">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+                    <a href="https://www.instagram.com/zuhrulumam" target="_blank" class="footer__social"
+                        title="Instagram">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer__copy">&#169; 2025 Moch. Zuhrul Umam. <span data-translate="all_rights">Hak cipta dilindungi.</span></p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- =====================================
-       PROJECTS
-  ===================================== -->
-  <main id="projects" aria-labelledby="projects-title">
-    <div class="card">
-      <h3 id="projects-title" style="margin-top:0">Project</h3>
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
 
-      <div class="grid">
-
-        <!-- Project 1 -->
-        <article class="project">
-          <div class="thumb">
-            <img src="img/lpmweb.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
-          </div>
-          <h3>Website LPM UNISLA (WordPress)</h3>
-          <p>Mengelola website resmi LPM Universitas Islam Lamongan: instalasi, konfigurasi tema & plugin, optimasi tampilan, dan publikasi konten.</p>
-          <div class="tags">
-            <span class="tag">WordPress</span>
-            <span class="tag">Theme Configuration</span>
-            <span class="tag">Content Management</span>
-            <a class="tag link" href="https://lpm.unisla.ac.id" target="_blank">Kunjungi</a>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project">
-          <div class="thumb">
-            <img src="img/siamu.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
-          </div>
-          <h3>SIAMU UNISLA — Sistem Audit Mutu Internal (PHP)</h3>
-          <p>Sistem audit mutu berbasis PHP dengan fitur autentikasi, manajemen dokumen, verifikasi, dan laporan internal.</p>
-          <div class="tags">
-            <span class="tag">PHP</span>
-            <span class="tag">MVC</span>
-            <span class="tag">Dokumen & Laporan</span>
-            <a class="tag link" href="https://siamu.unisla.ac.id" target="_blank">Kunjungi</a>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project">
-          <div class="thumb">
-            <img src="img/simts.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
-          </div>
-          <h3>SIMTS - Sistem Informasi MTs</h3>
-          <p>Desain front-end sistem presensi guru & siswa: login, input hadir, rekap CSV.</p>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">UI/UX</span>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="project">
-          <div class="thumb">
-            <img src="img/sipadi.png" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
-          </div>
-          <h3>Aplikasi Klasifikasi Penyakit Padi (Flask)</h3>
-          <p>Web interface Flask untuk model ResNet50V2: upload citra daun, prediksi penyakit, dan confidence score.</p>
-          <div class="tags">
-            <span class="tag">Flask</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">ResNet50V2</span>
-          </div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project">
-          <div class="thumb">
-            <img src="img/overload.jpg" style="width:100%;height:160px;border-radius:10px;object-fit:cover">
-          </div>
-          <h3>Landing Page — Deteksi Kelebihan Muatan</h3>
-          <p>Landing page untuk aplikasi deteksi overload, berisi dokumentasi singkat dan contoh hasil.</p>
-          <div class="tags">
-            <span class="tag">Landing Page</span>
-            <span class="tag">Documentation</span>
-            <span class="tag">Machine Learning</span>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- =====================================
-         SIDEBAR
-    ===================================== -->
-    <aside>
-      <div class="card">
-        <h4 style="margin:0 0 8px 0">Keahlian Teknis</h4>
-        <div class="meta">
-          HTML, CSS, JavaScript • PHP & MySQL • WordPress • Flask & TensorFlow • GitHub • Deployment • IT Support & Networking
-        </div>
-      </div>
-
-      <div class="card">
-        <h4 style="margin:0 0 8px 0">Pendidikan & Sertifikat</h4>
-        <div class="meta">
-          S1 Informatika — Universitas Islam Lamongan (IPK 3.70) • Sertifikat Dicoding: JavaScript, SQL, Web, Software Dev, Project Management (2023)
-        </div>
-      </div>
-
-      <div class="card" id="contact-title">
-        <h4 style="margin:0 0 8px 0">Kontak</h4>
-        <div class="meta">Email: <a class="link" href="mailto:zuhrulumam969@gmail.com">zuhrulumam969@gmail.com</a></div>
-        <div class="meta" style="margin-top:8px">GitHub: <a class="link" href="https://github.com/zuhrulumam" target="_blank">github.com/zuhrulumam</a></div>
-        <div class="meta" style="margin-top:8px">Lokasi: Lamongan, Indonesia</div>
-      </div>
-    </aside>
-
-  </main>
-
-  <footer>
-    © 2025 Moch. Zuhrul Umam — Web Developer & IT Support.
-  </footer>
-
-</div>
-
-<script>
-function downloadCV(){
-  window.open('https://github.com/zhrlumam/img/CV_Zuhrul_Umam.pdf','_blank');
-}
-function contactMail(){
-  location.href = 'mailto:zuhrulumam969@gmail.com';
-}
-</script>
-
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
