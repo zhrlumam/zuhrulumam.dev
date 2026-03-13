@@ -392,18 +392,26 @@ if (contactForm) {
     })
 }
 
-/*==================== SCROLL FADE-IN ANIMATION ====================*/
-const fadeEls = document.querySelectorAll('.section, .about__img, .skills__content, .services__content')
-fadeEls.forEach(el => el.classList.add('fade-in'))
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const revealEls = document.querySelectorAll('.section, .about__img, .about__data, .skills__container > div, .skills__content, .services__content, .qualification__data, .portfolio__content, .contact__information, .contact__form, .reveal-left, .reveal-right')
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+revealEls.forEach(el => {
+    if (!el.classList.contains('reveal-left') && !el.classList.contains('reveal-right')) {
+        el.classList.add('fade-in')
+    }
+})
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible')
-            }, i * 80)
+            entry.target.classList.add('visible')
+        } else {
+            entry.target.classList.remove('visible')
         }
     })
-}, { threshold: 0.1 })
+}, { 
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px' 
+})
 
-fadeEls.forEach(el => observer.observe(el))
+revealEls.forEach(el => revealObserver.observe(el))
